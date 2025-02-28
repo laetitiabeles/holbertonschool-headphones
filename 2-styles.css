@@ -1,0 +1,338 @@
+/*** 1. GLOBAL ***/
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+  font: inherit;
+}
+
+html, body {
+	height: 100%;
+}
+
+/* Variables */
+  :root{
+    --orange: #FF6565;
+  }
+
+/* Fonts */
+  @font-face {
+    font-family: "Source Sans Pro";
+    src: url("./fonts/SourceSansPro-Regular.otf");
+
+    font-family: "Spin Cycle OT";
+    src: url("./fonts/spincycle_ot.otf");
+
+    font-family: "Holberton School Icon";
+    src: url("./fonts/holberton_school-icon.ttf");
+}
+
+    body {
+        font-family: "Source Sans Pro";
+    }
+
+/* Header */
+  header {
+    background-image: url("./images/headphones_hero_1.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #FFFFFF;
+    text-align: center;
+  }
+
+  header h1 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 270px;
+  }
+
+  header h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 24px;
+  }
+
+  header button {
+    border-radius: 22px;
+    width: 162px;
+    height: 44px;
+    background-color: var(--orange);
+    border: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 65px;
+  }
+
+  header button:hover {
+    opacity: 0.9
+  }
+
+  header p {
+    font-size: 16px;
+    margin-bottom: 106px;
+    line-height: 26px;
+  }
+
+  .header {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 66px;
+    padding-right: 66px;
+  }
+
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    position: relative;
+}
+
+.logo-container img {
+    width: 160px;
+    height: 30px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    text-align: center;
+    gap: 20px;
+    cursor: pointer;   
+}
+
+.main-nav li:hover {
+  color: var(--orange);
+}
+
+.burger-toggle {
+    display: none;
+}
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 24px;
+    width: 20px;
+    z-index: 1001;
+}
+
+.burger-menu .burger-icon,
+.burger-menu .burger-icon::before,
+.burger-menu .burger-icon::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background-color: #FFFFFF;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.burger-menu .burger-icon::before {
+    position: absolute;
+    width: 30px;
+}
+
+.burger-menu .burger-icon::after {
+  position: absolute;
+  width: 25px;
+}
+
+.burger-menu .burger-icon::before {
+    transform: translateY(-8px);
+}
+
+.burger-menu .burger-icon::after {
+    transform: translateY(8px);
+}
+
+.main-nav {
+    display: flex;
+}
+
+.header-content {
+  display: flex;
+  justify-content: center;
+}
+
+.header-text {
+  max-width: 630px;
+}
+
+/* Tasks */
+
+.tasks, .results {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tasks h2, .results h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-top: 110px;
+  margin-bottom: 50px;
+}
+
+.tasks p, .results p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.do-tasks, .results-tasks {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.task, .result {
+  width: 170px;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-right: 30px;
+}
+
+.task span {
+  font-family: "Holberton School Icon";
+  color: var(--orange);
+  font-size: 70px;
+}
+
+.task h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.task p {
+  font-size: 14px;
+}
+
+.tasks-title, .results-title {
+  max-width: 640px;
+}
+
+.results {
+  background-image: url("./images/headphones_hero_2.jpg");
+  color: #FFFFFF;
+  background-size: cover;
+  background-position: center;
+}
+
+.result {
+  background-image: url("./images/pentagone.png");
+  height: 170px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.result span {
+  font-size: 46px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.result p {
+  font-size: 14px;
+}
+
+
+@media (max-width: 375px) {
+  .header {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  
+  .main-nav {
+      display: none;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 1000;
+  }
+
+  .burger-menu {
+      display: flex;
+      padding: 10px;
+  }
+
+  .burger-toggle:checked + .burger-menu .burger-icon {
+      background-color: transparent;
+  }
+
+  .burger-toggle:checked + .burger-menu .burger-icon::before {
+      transform: rotate(45deg);
+      width: 20px;
+  }
+
+  .burger-toggle:checked + .burger-menu .burger-icon::after {
+      transform: rotate(-45deg);
+      width: 20px;
+  }
+
+  .burger-toggle:checked ~ .main-nav {
+      display: block;
+      padding: 0;
+  }
+
+  .burger-toggle:checked ~ .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+  .header-container {
+      padding-top: 10px;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+  }
+
+  .logo-container {
+      margin: 0 auto;
+  }
+
+  .main-nav ul {
+    margin-top: 250px;
+  }
+
+  .tasks-title, .results-title {
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .do-tasks, .results-tasks {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1100px) and (min-width: 400px) {
+
+  .do-tasks, .results-tasks {
+    max-width: 640px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tasks-title, .results-title {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+}
